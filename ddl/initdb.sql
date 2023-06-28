@@ -4,10 +4,15 @@ CREATE TABLE IF NOT EXISTS public.products(
     price money
 );
 
+CREATE TABLE IF NOT EXISTS public.shop_name(
+    id_shop serial PRIMARY KEY,
+    shop_name varchar(180)
+);
+
 CREATE TABLE IF NOT EXISTS public.shop_mvideo(
     "date" date,
     product_id int,
-    sales_cnt int,
+    sales_cnt int, 
     FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
 );
 
@@ -23,11 +28,6 @@ CREATE TABLE IF NOT EXISTS public.shop_sitilink(
     product_id int,
     sales_cnt int,
     FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
-);
-
-CREATE TABLE IF NOT EXISTS public.shop_name(
-    id_shop serial PRIMARY KEY,
-    shop_name varchar(180)
 );
 
 CREATE TABLE IF NOT EXISTS public.plan(

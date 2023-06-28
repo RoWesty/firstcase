@@ -4,6 +4,12 @@ VALUES
 ('Сарафанное радио', 1800),
 ('Патефон', 250);
 
+INSERT INTO shop_name(shop_name)
+VALUES
+('dns'),
+('sitilink'),
+('mvideo');
+
 INSERT INTO shop_mvideo("date", product_id, sales_cnt)
 VALUES
 ('2023-06-01', 2, 1),
@@ -12,6 +18,7 @@ VALUES
 ('2023-06-09', 3, 1),
 ('2023-06-07', 2, 7),
 ('2023-06-21', 2, 3),
+('2022-06-17', 3, 50),
 ('2023-06-17', 3, 3);
 
 INSERT INTO shop_dns("date", product_id, sales_cnt)
@@ -21,6 +28,7 @@ VALUES
 ('2023-06-02', 1, 8),
 ('2023-06-26', 2, 1),
 ('2023-06-21', 1, 7),
+('2023-05-11', 3, 90),
 ('2023-06-22', 1, 3),
 ('2023-06-15', 3, 3);
 
@@ -33,12 +41,6 @@ VALUES
 ('2023-06-05', 3, 7),
 ('2023-06-06', 2, 3),
 ('2023-06-07', 1, 3);
-
-INSERT INTO shop_name(shop_name)
-VALUES
-('dns'),
-('sitilink'),
-('mvideo');
 
 INSERT INTO plan(product_id,id_shop, plan_cnt, plan_date)
 VALUES
