@@ -35,6 +35,6 @@ CREATE TABLE IF NOT EXISTS public.plan(
     id_shop int,
     plan_cnt money,
     plan_date date,
-    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
+    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL,
     FOREIGN KEY (id_shop) REFERENCES shop_name (id_shop) ON DELETE SET NULL
 );
