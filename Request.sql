@@ -10,7 +10,7 @@
                  UNION ALL
                  SELECT SUM(sales_cnt)
                  FROM shop_sitilink ss
-                 WHERE DATE_PART('month', ss."date") = ALL(SELECT DATE_PART('month', CURRENT_DATE) FROM plan pl WHERE DATE_PART('month',pl.plan_date) = DATE_PART('month', CURRENT_DATE)) AND DATE_PART('year', ss."date") = ALL(SELECT DATE_PART('year', CURRENT_DATE) FROM plan pl WHERE DATE_PART('year',pl.plan_date) = DATE_PART('year', CURRENT_DATE))) AS sum_fact),
+                 WHERE DATE_PART('month', ss."date") = DATE_PART('month', CURRENT_DATE) AND DATE_PART('year', ss."date") = DATE_PART('year', CURRENT_DATE)) AS sum_fact),
     sl_plan AS (SELECT SUM(pl.plan_cnt) AS sales_plan
                  FROM plan pl
                  GROUP BY pl.plan_date),
