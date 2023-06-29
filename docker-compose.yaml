@@ -1,0 +1,13 @@
+version: "1.0"
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: "firstcase"
+      POSTGRES_USER: "Admin"
+      POSTGRES_PASSWORD: "peace"
+    volumes:
+      - ./ddl/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+      - ./dml/insertdb.sql:/docker-entrypoint-initdb.d/insertdb.sql
+    ports:
+      - "5432:5432"
