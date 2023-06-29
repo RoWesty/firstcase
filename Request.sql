@@ -2,11 +2,11 @@
                  FROM
                 (SELECT SUM(sales_cnt) AS sm1
                  FROM shop_dns sd
-                 WHERE DATE_PART('month', sd."date") = ALL(SELECT DATE_PART('month', CURRENT_DATE) FROM plan pl WHERE DATE_PART('month',pl.plan_date) = DATE_PART('month', CURRENT_DATE)) AND DATE_PART('year', sd."date") = ALL(SELECT DATE_PART('year', CURRENT_DATE) FROM plan pl WHERE DATE_PART('year',pl.plan_date) = DATE_PART('year', CURRENT_DATE))
+                 WHERE DATE_PART('month', sd."date") = DATE_PART('month', CURRENT_DATE) AND DATE_PART('year', sd."date") = DATE_PART('year', CURRENT_DATE) 
                  UNION ALL
                  SELECT SUM(sales_cnt)
                  FROM shop_mvideo sm
-                 WHERE DATE_PART('month', sm."date") = ALL(SELECT DATE_PART('month', CURRENT_DATE) FROM plan pl WHERE DATE_PART('month',pl.plan_date) = DATE_PART('month', CURRENT_DATE)) AND DATE_PART('year', sm."date") = ALL(SELECT DATE_PART('year', CURRENT_DATE) FROM plan pl WHERE DATE_PART('year',pl.plan_date) = DATE_PART('year', CURRENT_DATE))
+                 WHERE DATE_PART('month', sm."date") = DATE_PART('month', CURRENT_DATE) AND DATE_PART('year', sm."date") = DATE_PART('year', CURRENT_DATE) 
                  UNION ALL
                  SELECT SUM(sales_cnt)
                  FROM shop_sitilink ss
