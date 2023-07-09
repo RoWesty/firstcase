@@ -12,22 +12,29 @@ CREATE TABLE IF NOT EXISTS public.shop_name(
 CREATE TABLE IF NOT EXISTS public.shop_mvideo(
     "date" date,
     product_id int,
+    id_shop int,
     sales_cnt int, 
-    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
+    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL,
+    FOREIGN KEY (id_shop) REFERENCES shop_name (id_shop) ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.shop_dns(
     "date" date,
     product_id int,
+    id_shop int,
     sales_cnt int,
-    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
+    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL,
+    FOREIGN KEY (id_shop) REFERENCES shop_name (id_shop) ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS public.shop_sitilink(
     "date" date,
     product_id int,
+    id_shop int,
     sales_cnt int,
-    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL
+    FOREIGN KEY (product_id) REFERENCES products (product_id) ON DELETE SET NULL,
+    FOREIGN KEY (id_shop) REFERENCES shop_name (id_shop) ON DELETE SET NULL
+
 );
 
 CREATE TABLE IF NOT EXISTS public.plan(
